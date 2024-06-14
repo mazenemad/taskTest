@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ScrollTrigger from 'gsap/src/ScrollTrigger'
 import gsap from 'gsap'
+import Scroll from './testapp'
 function App() {
   const [count, setCount] = useState(0)
   const [image, setImage] = useState("https://awik.io/demo/guardian-phone.png")
@@ -35,9 +36,9 @@ function App() {
       scrollTrigger: {
         trigger: ".log2",
         scrub: 1,
-        onUpdate:(e)=>{
-            console.log(e.progress)
-        },  
+        onUpdate: (e) => {
+          console.log(e.progress)
+        },
         onEnter: () => {
           setImage('https://plus.unsplash.com/premium_photo-1664392248318-4e1d9361726e?q=80&w=1883&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
         },
@@ -72,25 +73,14 @@ function App() {
   return (
     <>
       <div className='relative'>
-        <div style={{position:'relative !important'}} className='h-fit relative'>
+        <div style={{ position: 'relative !important' }} className='h-fit relative'>
           <div className='sticky top-0 left-0'>
             <Header image={image} />
           </div>
-          <div className='ml-[300px] flex justify-center items-center log1 h-[200vh] bg-red-60'>
-            <h1 style={{ opacity: 0 }} className='log1text text-white text-3xl'>
-              Lorem ipsum dolor sit amet .
-            </h1>
+          <div>
+            <Scroll imgsArray={['https://awik.io/demo/guardian-phone.png', 'https://plus.unsplash.com/premium_photo-1664392248318-4e1d9361726e?q=80&w=1883&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D']} setImage={setImage} />
           </div>
-          <div className='ml-[300px] flex justify-center items-center log2 h-[200vh] bg-blue-60'>
-            <h1 className='log2text text-white text-3xl'>
-              Lorem ipsum dolor sit amet .
-            </h1>
-          </div>
-          <div className='ml-[300px] flex justify-center items-center log3 h-[200vh] bg-yellow-60'>
-            <h1 className='log3text text-white text-3xl'>
-              Lorem ipsum dolor sit amet .
-            </h1>
-          </div>
+
           <div className='ml-[300px] flex justify-center items-center log4 h-[200vh] bg-yellow-60'>
 
           </div>
